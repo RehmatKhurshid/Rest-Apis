@@ -7,7 +7,6 @@ import multer from 'multer';
 import helmet from "helmet";
 import { isAuthenticated } from './middleware/user.js';
 
-
 const upload = multer({ dest : './public/data/uploads/' })
 
 const app = express();
@@ -17,14 +16,9 @@ app.use(express.urlencoded())
 
 const PORT = 3334;  
 
-
-
-
-
 app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
-
 
 connectDB();
 
