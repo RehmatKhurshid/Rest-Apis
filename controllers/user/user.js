@@ -14,7 +14,6 @@ export const signUp = async (req, res) => {
 
         //hash password
         const hashedPassword = await bcrypt.hash(password, salt)
-
         console.log(hashedPassword)
         const user = new User({
             firstName,
@@ -56,11 +55,6 @@ export const signIn = async (req, res) => {
             email: isUser.email,
             token
         });
-
-
-
-
-
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });
         console.log(error)
